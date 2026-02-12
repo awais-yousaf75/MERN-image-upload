@@ -7,13 +7,12 @@ const CreatePost = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    axios
+    await axios
       .post("http://localhost:3000/create-post", formData)
       .then((response) => {
         navigate("/feed");
       })
       .catch((err) => {
-        console.log(err);
         alert("Error creating post");
       });
   };

@@ -6,7 +6,7 @@ const Feed = () => {
   useEffect(() => {
     axios.get("http://localhost:3000/feed").then((response) => {
       setposts(response.data.posts);
-    }, []);
+    });
   }, []);
   return (
     <section className="feed-section">
